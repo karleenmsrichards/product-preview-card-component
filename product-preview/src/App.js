@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState } from "react";
+import { MobileComponent } from "./MobileComponent";
+import { DesktopComponent } from "./DesktopComponent";
+
+import "./App.css";
 
 function App() {
+  const [width, setWidth] = useState(window.innerWidth);
+  function HandleResize() {
+    console.log(window.innerWidth);
+    return setWidth(window.innerWidth);
+  }
+  window.addEventListener("resize", HandleResize);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {width < 375 ? <MobileComponent /> : <DesktopComponent />}
     </div>
   );
 }

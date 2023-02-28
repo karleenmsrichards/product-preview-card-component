@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Hanken+Grotesk:wght@500;700;800&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  font-size: 14px;
+  font-family: Montserrat;
+  padding: 20px 15px;
+  background-color: var(--cream);
+}
+
+@media only screen and (min-width: 375px) {
+  body {
+    display: grid;
+    /* grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    ". card-desktop ."; */
+    padding: 14% 27% 0 27%;
+    font-size: 16px;
+    height: 100vh;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2, span {
+  font-family: Fraunces;
+}
+
+.card-subtitle {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dark-grayish-blue);
+  padding-bottom: 3px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  color: black;
+}
+
+.card-mobile {
+  background-color: var(--white);
+  color: var(--dark-grayish-blue);
+  border-radius: 10px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-text {
   display: flex;
   flex-direction: column;
+  gap: 5px;
+  padding: 15px 25px 20px 25px;
+}
+
+.card-desktop {
+  grid-area: card-desktop;
+  width: 100%;
+  background-color: var(--white);
+  color: var(--dark-grayish-blue);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr); 
+  grid-template-rows: 1fr;
+}
+
+@media only screen and (min-width: 375px) {
+  .card-image {
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .card-text {
+    width: 100%;
+    padding: 32px 30px 15px 30px;
+    gap: 18px;
+    /* border:2px dotted red; */
+  }
+
+  .card-subtitle {
+    padding-bottom: 5px;
+  }
+
+  h2 {
+    margin-right: 40px;
+    font-size: 38px;
+  }
+
+  .card-description-content {
+    margin-right: 10px;
+    /* border: 2px dotted red; */
+  }
+
+  button {
+    margin-top: 5px;
+  }
+}
+
+.card-description-content {
+  padding: 10px 0 10px 0;
+  line-height: 1.6;
+}
+
+.card-price-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.sale-price-content {
+  color: var(--dark-cyan);
+  font-weight: 700;
+  font-size: 24px;
+  font-family: Fraunces;
+}
+
+.price-content {
+  text-decoration: line-through;
+  font-size: 12px;
+}
+
+button {
+  color: var(--white);
+  font-weight: 800;
+  background-color: var(--dark-cyan);
+  border: none;
+  padding: 20px 0;
+  border-radius: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-cart-iamge {
+  padding-right: 10px;
 }
