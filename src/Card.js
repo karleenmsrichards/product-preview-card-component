@@ -1,5 +1,5 @@
-import cardImage from "./image-product-mobile.jpg";
-import cardCartIcon from "./icon-cart.svg";
+// import cardImage from "./image-product-mobile.jpg";
+// import cardCartIcon from "./icon-cart.svg";
 
 export const Card = (props) => {
   return (
